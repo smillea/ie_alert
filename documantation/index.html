@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>IE Alert! Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+
+		pre {
+			background-color: #333;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			padding: 20px;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size:15px;
+			color: #30f91c;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">IE Alert! plugin documentation v1.0</h3>
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#about">About the plugin</a></li>
+			<li><a href="#howplugin">What the plugin does</a></li>
+			<li><a href="#start">Getting started</a></li>
+			<li><a href="#using">Using the plugin</a></li>
+			<li><a href="#options">Options</a></li>
+			<li><a href="#font">Changing the font style</a></li>
+			<li><a href="#license">Credits and Source</a></li>
+
+		</ol>
+
+
+<hr>
+
+		<h3 id="about"><strong>A) About the plugin</strong> - <a href="#toc">top</a></h3>
+		<p>IE Alert is a handy jQuery plugin that shows a well designed warning message to the visitor who's trying to view your site with an older version of Internet Explorer browser, this warning message will convince him to upgrade his browser to a newer version of Internet Explorer or to an another modern web browser.</p>
+		
+		<img src="assets/images/alert_window.jpg" alt="IE Alert" />
+		
+		<p>This message will appear if your visitor is using an older version of Internet Explorer</p>
+
+
+		<hr>
+
+		<h3 id="howplugin"><strong>B) What the plugin does</strong> - <a href="#toc">top</a></h3>
+
+		<p>With the IE Alert plugin the visitors who are browsing your site with Internet Explorer IE8 (or lower versions) will see an warning message. This warning message tries to convince them to upgrade to a newer version of Internet Explorer or to an another modern web browser if they wish to continue on your site . By clicking the browser logos at the bottom a new window/tab will be opened where your visitor can download the current version of the chosen browser.<br />
+			The warning message contains a <i>title</i> text (title text can be modified, see <a href="#options">options</a>) a basic text (this text can be modified, see <a href="#options">options</a>) and 5 images.
+			These clickable images are logos of modern web browsers (<a href="https://www.google.com/chrome/">Google Chrome</a>,<a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>,<a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/">Internet Explorer 9</a>,<a href="http://www.apple.com/safari/download/">Safari</a>,<a href="http://www.opera.com/download/">Opera</a>) when the visitor chooses a browser and clicks on the image a new window/tab will open where the visitor can download the up to date version of the chosen browser.
+
+
+		</p>
+
+		<hr>
+		
+		<h3 id="start"><strong>C) Getting started</strong> - <a href="#toc">top</a></h3>
+
+		
+		<strong>Folder Structure</strong>
+
+		<p>When you unzip the downloaded file the folder structure looks the following:</p>
+
+<ul>
+<li>Documentation</li>
+<li>ThePlugin</li>
+</ul>
+<i>Documentation</i> - The documentation to the plugin.
+</br>
+<i>ThePlugin</i> - In the Plugin folder you can find the following files:
+<p></p>
+<ul>
+<li>iealert</li>
+<li>iealert.js</li>
+<li>iealert.min.js</li>
+</ul>
+<i>iealert</i> - In the iealert folder you can find a css file called style.css and two images iealertsprite.png and bg.png image.
+</br>
+<i>iealert.js</i> - This is the plugin.
+</br>
+<i>iealert.min.js</i> - This is a minified version of the plugin.
+</br>
+</br>
+</br>
+<strong>First step</strong>
+<p>The first step is to include some <strong>required</strong> files into your HTML document.</p>
+<p>1.Include the latest <strong>jQuery library</strong> right after the closing &lt;/head> tag in your html document.</p>
+<a href="http://docs.jquery.com/Downloading_jQuery">Download jQuery from jquery.com</a><br />
+<a href="http://docs.jquery.com/How_jQuery_Works">How jQuery works</a><br /><br />
+<p>2.Include the minified <strong>IE Alert plugin (iealert.min.js)</strong> right after the already included jQuery Library.</p>
+<p>3.Include the <strong>style.css</strong> CSS file (which is in the iealert folder) right after the already included IE Alert plugin.
+Note, that the style.css file must be in the same folder as the iealertsprite.png and bg.png images are.</p>
+<br/>
+<p>A simple example how your HTML markup will look like if you include the required files:</p>
+
+<pre>
+&lt;!DOCTYPE html>
+&lt;html>
+ &lt;head>
+ &lt;meta charset="UTF-8">
+  &lt;title>TITLE&lt;/title>
+
+   &lt;script src="http://code.jquery.com/jquery-1.7.2.js" type="text/javascript">&lt;/script>
+   &lt;script src="iealert.min.js" type="text/javascript">&lt;/script>
+   &lt;link rel="stylesheet" type="text/css" href="iealert/style.css" />
+
+ &lt;/head>
+ &lt;body>
+  
+ &lt;/body>
+&lt;/html>
+</pre>
+	<hr>
+
+		<h3 id="using"><strong>D) Using the plugin</strong> - <a href="#toc">top</a></h3>
+
+		<p>If you included all the required files (see Getting started > First step) you only need to "call" the plugin. We "call" the plugin with this line:</p> 
+		<pre>
+$("body").iealert();
+		</pre> 
+
+		<p>
+			Just copy this code and paste it into a jQuery $(document).ready() function. (more about the <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()">jQuery $(document).ready() function</a>)<br/><br/>
+			Example:
+		</p>
+		<pre>
+$(document).ready(function() {
+	$("body").iealert();
+});
+		</pre>
+
+
+		<p>If you done everything exactly as it was written you can test your website with Internet Explorer 8,7,6  and you will see the warning message appear.
+		</p>  
+
+
+		<hr>
+		
+		<h3 id="options"><strong>E) Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The IE Alert plugin accepts 3 options: <strong>support</strong>, <strong>title</strong>, <strong>text</strong></p>
+
+		<p><strong>&minus; The support option</strong></p>
+		<p>The support option defines on which version of Internet Explorer will the warning message appear.<br/>
+		The support option accepts 3 parameters:</p>
+		<p><strong>IE8 </strong>- The warning message will appear on Internet Explorer 8,7,6. By default it's set to <i>IE8</i></p>
+
+		<p>Example codes:</p>
+		<pre>
+		$("body").iealert({ support: "ie8" });
+		</pre>
+		<p>The warning message will appear on Internet Explorer 8,7,6</p>
+		<br/>
+
+		<pre>
+		$("body").iealert({ support: "ie7" });
+		</pre>
+		<p>The warning message will appear on Internet Explorer 7,6</p>
+		<br/>
+
+		<pre>
+		$("body").iealert({ support: "ie6" });
+		</pre>
+		<p>The warning message will appear <strong>only</strong> on Internet Explorer 6</p>
+<br/>
+<br/>
+
+<p><strong>&minus; The title option</strong></p>
+<p>The title option specifies the title text, by default its: Did you know that your Internet Explorer is out of date ?. You can modify this text to whatever you want.</p>
+	<img src="assets/images/alert_window_title.jpg" alt="IE Alert" />
+	<p>The title 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ title: "your browser is old!" });
+		</pre>
+		<br/>
+		<img src="assets/images/alert_window_title_change.jpg" alt="IE Alert" />
+		<p>The title text after the change.</p>
+		<br/>
+		<br/>
+		<p><strong>&minus; The text option</strong></p>
+<p>The text option specifies the text what is after the title text, by default its: To get the best possible experience using our site we recommend that you upgrade to a newer version of Internet Explorer .... You can modify this text to whatever you want.</p>
+	<img src="assets/images/alert_window_text.jpg" alt="IE Alert" />
+	<p>The text 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ text: "Please, update your browser" });
+		</pre>
+		<br/>
+		<img src="assets/images/alert_window_text_change.jpg" alt="IE Alert" />
+		<p>The text after the change.</p>
+		<br/>
+		<p>Note, the text parameter accepts HTML tags like the <a href="http://www.w3schools.com/tags/tag_font.asp"> HTML font tag</a>
+		. So you can style the text like this:</p>
+<pre>
+		$("body").iealert({ text: "Please, &lt;font color="red">update&lt;/font> your browser" });
+		</pre>
+		<p>The output will be:</p>
+		<img src="assets/images/alert_window_text_change_font.jpg" alt="IE Alert" />
+<p></p>
+		<hr>
+		
+		<h3 id="font"><strong>F) Changing the font style</strong> - <a href="#toc">top</a></h3>
+		
+		<p>If you want to change the font styles completely you need to change some CSS properties in the style.css (it's in the iealert folder).<br/>By default the: 
+			font family is Arial ,
+			font weight is bold and the 
+			font color is #333333<br/>
+
+			To change these styles open the style.css CSS file and search for <i>#ie-alert-panel</i> <br/>
+			To change the paragraphs font size search for <i>#ie-alert-panel p</i> the default is 14px <br/>
+			To change the titles font size search for <i>#ie-alert-panel span</i> the default is 18px
+
+		</p>
+		
+		<hr>
+		
+
+		<h3 id="license"><strong>G) Credits and Source</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Browser logos:<br/>
+		The Firefox logo belongs to Mozilla<br/>
+		The Chrome logo belongs to Google<br/>
+		The Internet Explorer logo belongs to Microsoft<br/>
+		The Opera logo belongs to Opera<br/>
+		The Safari logo belongs to Apple<br/><br/>
+
+		all other files were made by me including graphics and coding.</p>
+		
+		<hr>
+		
+		<p class="append-bottom alt large"><strong><a href="http://nmsdvid.com">Mady by David Nemes</a>|<a href="http://nmsdvid.com/iealert/">IE Alert homepage</a></strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
