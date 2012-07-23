@@ -9,8 +9,9 @@
 function initialize($obj, support, title, text){
 
 
-		var panel = "<span>"+ title +"</span>"
+		var panel = "<span><strong>"+ title +"</strong></span>"
 				  + "<p> "+ text +"</p>"
+		      + "<div id='ie_continue_btt'>Proceed Anyway</div>"
 			      + "<div class='browser'>"
 			      + "<ul>"
 			      + "<li><a class='chrome' href='https://www.google.com/chrome/' target='_blank'></a></li>"
@@ -24,9 +25,9 @@ function initialize($obj, support, title, text){
 		var overlay = $("<div id='ie-alert-overlay'></div>");
 		var iepanel = $("<div id='ie-alert-panel'>"+ panel +"</div>");
 
-		var docHeight = $(document).height();
-
-		overlay.css("height", docHeight + "px");
+		// var docHeight = $(document).height();
+		// 
+		// overlay.css("height", docHeight + "px");
 
 
 
@@ -84,8 +85,8 @@ function initialize($obj, support, title, text){
 	$.fn.iealert = function(options){
 		var defaults = { 
 			support: "ie8",  // ie8 (ie6,ie7,ie8), ie7 (ie6,ie7), ie6 (ie6)
-			title: "Did you know that your Internet Explorer is out of date ?", // title text
-			text: "To get the best possible experience using our site we recommend that you upgrade to a newer version of Internet Explorer or choose another web browser. A list of the most popular web browsers can be found below."
+			title: "Did you know that your the Internet Browser is out of date ?", // title text
+			text: "To get the best possible experience using our app we recommend that you upgrade to a newer version of Internet Explorer or choose another web browser. A list of the most popular web browsers can be found below."
 		};
 		
 		
@@ -102,4 +103,15 @@ function initialize($obj, support, title, text){
 			});		       
 	
 	};
+	
+	$("body").on('click', '#ie_continue_btt', function() {	  
+		$('#ie-alert-overlay').hide();
+		$('#ie-alert-panel').hide();
+  });
+
+	$("body").on('click', '#ie-alert-overlay', function() {	  
+		$('#ie-alert-overlay').hide();
+		$('#ie-alert-panel').hide();
+  });
+	
 })(jQuery);
